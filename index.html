@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PIANO </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header>
+        <h1> PIANO </h1>
+        <div class= "buttons">
+            <button id="open-piano">Open Online Piano</button>
+            <button id="open-guide">Learn how to operate piano through keyboard</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Piano Section -->
+        <section id = "piano-section" class="hidden">
+            <div class="piano">
+                <div class="key" data-key="A">1</div>
+                <div class="key" data-key="S">2</div>
+                <div class="key" data-key="D">3</div>
+                <div class="key" data-key="F">4</div>
+                <div class="key" data-key="G">5</div>
+                <div class="key" data-key="H">6</div>
+                <div class="key" data-key="J">7</div>
+            </div>
+
+            <!-- Side Guide while Piano is open -->
+            <aside id="mini-guide" class="hidden">
+                <h2>Quick Guide</h2>
+                <ul>
+                    <li>Press keys A–J to play notes</li>
+                    <li>Click keys if you are on mobile</li>
+                    <li>Watch the key highlight for feedback</li>
+                </ul>
+            </aside>
+
+        </section>
+
+        <!-- Full Guide Section -->
+        <section id="guide-section" class="hidden">
+            <h2>How to Use</h2>
+            <p>This virtual piano allows you to play notes using your keyboard or mouse. To begin:</p>
+            <ol>
+                <li>Click on 'Open Virtual Piano'</li>
+                <li>Use keys A through J to play notes</li>
+                <li>Or click/tap the piano keys on screen</li>
+            </ol>
+        </section>
+
+
+    </main>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
