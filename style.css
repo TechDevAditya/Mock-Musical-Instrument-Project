@@ -68,7 +68,6 @@ main {
   text-align: center;
   width: 50px;
   font-size: 20px;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -79,7 +78,7 @@ main {
 }
 
 #mini-guide, #guide-section {
-  max-width: 500px;
+  max-width: 5000px;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -95,7 +94,8 @@ main {
 
 #guide-section h2, #mini-guide h2 {
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 30px;
+  text-align: center;
 }
 
 #guide-section p {
