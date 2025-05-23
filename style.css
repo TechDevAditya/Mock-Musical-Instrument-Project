@@ -50,9 +50,9 @@ main {
   gap: 40px;
 }
 
-/* .hidden {
+.hidden {
   display: none;
-} */
+}
 
 .piano {
   display: flex;
