@@ -28,13 +28,63 @@ window.addEventListener('DOMContentLoaded', () => {
                 console.warn('No note found for this key!');
             };
 
-            const note = rawNote.toLowerCase();
-            const audio= new Audio(`sounds/${note}.mp3`);
-
-            console.log('Clicked: ${rawNote}, Attempt to play: sounds/${note}.mp3');
-            audio.play()
-                .then(() => console.log(`Playing ${note}`))
-                .catch(e => console.error(`Error in playing ${note}:`, e))
+            noteplay(rawNote);
         })
     })
-})
+
+    function noteplay(noteName){
+        const note = noteName.toLowerCase();
+        const audio= new Audio(`sounds/${note}.mp3`);
+        const matchingkey = document.querySelector(`.key[data-note="${noteName}"]`);
+
+        if(!matchingkey) console.warn('No key is matching');
+
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        const color = `rgb(${r}, ${g}, ${b})`;
+
+        matchingkey.style.backgroundColor = color;
+
+        //key release, change color back
+        setTimeout(() => {
+            matchingkey.style.backgroundColor = '';
+        }, 300);
+
+        console.log(`Clicked: ${noteName}, Attempt to play: sounds/${note}.mp3`);
+        audio.play()
+        .then(() => console.log(`Playing ${note}`))
+        .catch(e => console.error(`Error in playing ${note}:`, e));
+    }
+
+    
+    //press through keyboard
+    const pressedkeys = new Set();
+
+    window.addEventListener('keydown', (e) => {
+        pressedkeys.add(e.key.toUpperCase());
+
+        let letter = null;
+        let number = null;
+
+        for(let key of pressedkeys){
+            if(["A","B","C","D","E","F","G"].includes(key)){
+                letter = key;
+            }else if(["3","4","5"].includes(key)){
+                number = key;
+            }
+        }
+
+        if(letter && number){
+            const note = letter+number;
+            noteplay(note);
+        }
+
+    });
+
+    window.addEventListener('keyup', (e) => {
+        pressedkeys.delete(e.key.toUpperCase());
+    });
+
+    //Toggle Dark Mode
+});
