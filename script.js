@@ -22,10 +22,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => {
-        key.addEventListener('click', () => {
-            const note = key.dataset.note.toLowerCase();
-            const audio= new Audio('sounds/${note}.mp3');
-            audio.play();
+        key.addEventListener('click', function () {
+            const rawNote = this.getAttribute('data-note');
+            if(!rawNote){
+                console.warn('No note found for this key!');
+            };
+
+            const note = rawNote.toLowerCase();
+            const audio= new Audio(`sounds/${note}.mp3`);
+
+            console.log('Clicked: ${rawNote}, Attempt to play: sounds/${note}.mp3');
+            audio.play()
+                .then(() => console.log(`Playing ${note}`))
+                .catch(e => console.error(`Error in playing ${note}:`, e))
         })
     })
 })
