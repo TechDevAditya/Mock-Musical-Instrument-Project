@@ -65,7 +65,7 @@ main {
   border: 2px solid #ccc;
   border-radius: 4px;
   padding: 30px 15px;
-  text-align: center;
+  text-align: left;
   width: 50px;
   font-size: 20px;
   cursor: pointer;

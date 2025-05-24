@@ -19,4 +19,13 @@ window.addEventListener('DOMContentLoaded', () => {
         pianoSection.classList.add('hidden');
         miniguide.classList.add('hidden');
     });
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => {
+        key.addEventListener('click', () => {
+            const note = key.dataset.note.toLowerCase();
+            const audio= new Audio('sounds/${note}.mp3');
+            audio.play();
+        })
+    })
 })
