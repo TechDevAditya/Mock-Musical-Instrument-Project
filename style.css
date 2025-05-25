@@ -105,3 +105,31 @@ main {
 ol li, ul li {
   margin-bottom: 8px;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode .key {
+  background-color: #333;
+  border-color: #555;
+  color: #fff;
+}
+
+body.dark-mode button {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode button:hover {
+  background-color: #29d223;
+}
+
+.dark-mode #mini-guide,
+.dark-mode #guide-section {
+  background-color: #1e1e1e;
+  color: #eee;
+  border-color: #444;
+}
+

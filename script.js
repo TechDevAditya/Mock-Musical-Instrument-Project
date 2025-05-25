@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const pianoSection = document.getElementById('piano-section');
     const guide = document.getElementById('guide-section');
     const miniguide = document.getElementById('mini-guide');
-
+    const toggleModebtn = document.getElementById('toggle-mode');
     const pianobtn = document.getElementById('open-piano');
     const guidebtn = document.getElementById('open-guide');
 
@@ -87,4 +87,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     //Toggle Dark Mode
+    toggleModebtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggleModebtn.textContent = document.body.classList.contains('dark-mode')?'Light mode' : 'Dark mode';
+
+        document.querySelectorAll('#mini-guide, #guide-section').forEach(section => {
+            section.classList.toggle('dark-mode');
+        });
+    });
 });
