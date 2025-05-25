@@ -17,15 +17,6 @@ Full guide section available via a toggle button.
 Toggle between dark and light themes from the top-right button.
 Mode switch updates the entire layout, including guide and piano.
 
-
-# 🛠️ Project Structure   
-CSOC'25/
-├── index.html         # HTML structure of the piano app
-├── style.css          # Styling for layout, keys, guides, dark mode
-├── script.js          # Full interactive logic for piano, theme toggle
-├── sounds/            # Folder containing note .mp3 files (e.g., a3.mp3)
-└── README.md          # This file
-
 # 🎹 Usage
 🖱️ Mouse Interaction
 
